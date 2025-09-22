@@ -29,6 +29,18 @@
 
 #define _LARGEFILE64_SOURCE /* enable lseek64() */
 
+// ===== FIX PARA CONFLICTO sched_param =====
+#define _LINUX_SCHED_TYPES_H 1
+#define _UAPI_LINUX_SCHED_TYPES_H 1
+#ifdef __cplusplus
+extern "C" {
+#endif
+#include <sched.h>
+#ifdef __cplusplus
+}
+#endif
+// ===== FIN DEL FIX =====
+
 /******************************************************************************
  * INCLUDE SECTION
  ******************************************************************************/
